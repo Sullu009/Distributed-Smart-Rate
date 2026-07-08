@@ -5,7 +5,9 @@ const {
   register,
   login,
   getProfile,
+  changeRole,
 } = require("../controllers/authController");
+router.patch("/change-role", changeRole);
 
 const authMiddleware = require("../middleware/authMiddleware");
 

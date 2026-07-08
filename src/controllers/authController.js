@@ -2,7 +2,7 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Register
+// ================= REGISTER =================
 const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -41,7 +41,6 @@ const register = async (req, res) => {
         role: user.role,
       },
     });
-
   } catch (error) {
     console.error(error);
 
@@ -52,7 +51,7 @@ const register = async (req, res) => {
   }
 };
 
-// Login
+// ================= LOGIN =================
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -104,7 +103,6 @@ const login = async (req, res) => {
         role: user.role,
       },
     });
-
   } catch (error) {
     console.error(error);
 
@@ -115,7 +113,7 @@ const login = async (req, res) => {
   }
 };
 
-// Profile
+// ================= GET PROFILE =================
 const getProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -131,7 +129,6 @@ const getProfile = async (req, res) => {
       success: true,
       user,
     });
-
   } catch (error) {
     console.error(error);
 
@@ -142,8 +139,52 @@ const getProfile = async (req, res) => {
   }
 };
 
+// ================= CHANGE ROLE (Testing Only) =================
+const changeRole = async (req, res) => {
+  try {
+    const { email, role } = req.body;
+
+    const validRoles = ["FREE", "PREMIUM", "ADMIN"];
+
+    if (!validRoles.includes(role)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid Role",
+      });
+    }
+
+    const user = await User.findOneAndUpdate(
+      { email },
+      { role },
+      { new: true }
+    ).select("-password");
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Role Updated Successfully",
+      user,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+    });
+  }
+};
+
+// ================= EXPORTS =================
 module.exports = {
   register,
   login,
   getProfile,
+  changeRole,
 };

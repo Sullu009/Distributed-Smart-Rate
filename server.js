@@ -29,7 +29,7 @@ const INSTANCE_ID = process.env.INSTANCE_ID || `pid-${process.pid}`;
 // Redis Client
 const redis = createRedisClient();
 
-//const roleRateLimiter = createRoleRateLimiter(redis);
+const roleRateLimiter = createRoleRateLimiter(redis);
 
 // Rate Limiters
 const limiters = {
@@ -55,12 +55,15 @@ const byIp = (req) => req.ip;
 // Fixed Window
 app.get(
   "/api/fixed-window",
-  rateLimitMiddleware(limiters.fixed, { keyGenerator: byIp }),
+  authMiddleware,
+  roleRateLimiter,
   (req, res) => {
     res.json({
-      ok: true,
+      success: true,
+      message: "Request Allowed",
+      role: req.user.role,
+      userId: req.user.id,
       algorithm: "fixed-window",
-      servedBy: INSTANCE_ID,
     });
   }
 );
