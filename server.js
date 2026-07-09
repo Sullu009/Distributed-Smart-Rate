@@ -9,7 +9,7 @@ const authRoutes = require("./src/routes/authRoutes");
 
 const authMiddleware = require("./src/middleware/authMiddleware");
 const createRoleRateLimiter = require("./src/middleware/roleRateLimiter");
-
+const analyticsRoutes = require("./src/routes/analyticsRoutes");
 const { createRedisClient } = require('./src/redisClient');
 
 const { FixedWindowLimiter } = require('./src/limiters/fixedWindow');
@@ -48,6 +48,7 @@ app.use(express.json());
 
 // Authentication Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/analytics", analyticsRoutes);
 
 // Identify clients by IP
 const byIp = (req) => req.ip;
