@@ -227,6 +227,18 @@ REDIS_PORT=6379
 | GET | /api/token-bucket |
 
 ---
+# ☁️ Deployment
+
+The application is deployed on Render.
+
+**Live API**
+
+https://distributed-smart-rate.onrender.com
+
+**Swagger Documentation**
+
+https://distributed-smart-rate.onrender.com/api-docs
+---
 
 ## Analytics
 
