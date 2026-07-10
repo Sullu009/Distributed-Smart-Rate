@@ -1,4 +1,4 @@
-# 🚀 Distributed Smart Rate Limiter
+#  Distributed Smart Rate Limiter
 
 A production-ready distributed API Rate Limiter built using **Node.js, Express.js, Redis, MongoDB and Docker**.
 
@@ -13,7 +13,7 @@ The project demonstrates how to implement scalable and distributed rate limiting
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ---
 
-# 📌 Features
+# Features
 
 ## Authentication
 - User Registration
@@ -47,7 +47,7 @@ All algorithms use **Redis Lua Scripts**, making every operation atomic and race
 
 ---
 
-# 👥 Role-Based Rate Limiting
+#  Role-Based Rate Limiting
 
 The system supports three user roles.
 
@@ -61,7 +61,7 @@ Role information is stored inside MongoDB and included inside JWT Tokens.
 
 ---
 
-# 📊 Analytics API
+#  Analytics API
 
 The Analytics API provides:
 
@@ -86,12 +86,12 @@ Example Response
 
 ---
 
-# 📄 Swagger Documentation
+#  Swagger Documentation
 
 Interactive API Documentation is available at:
 
 ```
-## 🌐 Live Demo
+##  Live Demo
 
 API:
 https://distributed-smart-rate.onrender.com
@@ -104,7 +104,7 @@ Swagger allows developers to test APIs directly from the browser.
 
 ---
 
-# 🏗️ Project Architecture
+#  Project Architecture
 
 ```
 Client
@@ -127,7 +127,7 @@ Express Server
 
 ---
 
-# 📁 Project Structure
+#  Project Structure
 
 ```
 Distributed-Smart-Rate/
@@ -153,7 +153,7 @@ Distributed-Smart-Rate/
 
 ---
 
-# 🛠️ Technologies Used
+#  Technologies Used
 
 - Node.js
 - Express.js
@@ -167,7 +167,7 @@ Distributed-Smart-Rate/
 
 ---
 
-# ⚙️ Installation
+#  Installation
 
 Clone the repository
 
@@ -195,7 +195,7 @@ npm start
 
 ---
 
-# 🔑 Environment Variables
+#  Environment Variables
 
 Create a `.env` file.
 
@@ -217,7 +217,7 @@ JWT_SECRET=your_secret
 
 ---
 
-# 📡 API Endpoints
+#  API Endpoints
 
 ## Authentication
 
@@ -239,7 +239,7 @@ JWT_SECRET=your_secret
 | GET | /api/token-bucket |
 
 ---
-# ☁️ Deployment
+#  Deployment
 
 The application is deployed on Render.
 
@@ -260,7 +260,7 @@ https://distributed-smart-rate.onrender.com/api-docs
 
 ---
 
-# 🧪 Testing
+#  Testing
 
 You can test all APIs using
 
@@ -270,25 +270,7 @@ You can test all APIs using
 
 ---
 
-# 🎯 Interview Highlights
-
-This project demonstrates knowledge of:
-
-- Distributed Systems
-- Redis
-- Lua Scripting
-- JWT Authentication
-- Role-Based Authorization
-- REST APIs
-- Docker
-- MongoDB
-- Express.js
-- API Documentation
-- Backend System Design
-
----
-
-# 🚀 Future Improvements
+#  Future Improvements
 
 - Redis Cluster Support
 - Prometheus Metrics
@@ -301,7 +283,7 @@ This project demonstrates knowledge of:
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 **Mohammad Sultan**
 
