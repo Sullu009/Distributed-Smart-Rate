@@ -84,7 +84,13 @@ Example Response
 Interactive API Documentation is available at:
 
 ```
-http://localhost:3000/api-docs
+## 🌐 Live Demo
+
+API:
+https://distributed-smart-rate.onrender.com
+
+Swagger:
+https://distributed-smart-rate.onrender.com/api-docs
 ```
 
 Swagger allows developers to test APIs directly from the browser.
