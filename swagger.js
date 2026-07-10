@@ -8,11 +8,14 @@ const options = {
       version: "1.0.0",
       description: "API Documentation for Distributed Smart Rate Limiter",
     },
-    servers: [
-      {
-        url: "http://localhost:3000",
-      },
-    ],
+   servers: [
+  {
+    url:
+      process.env.NODE_ENV === "production"
+        ? "https://distributed-smart-rate.onrender.com"
+        : "http://localhost:3000",
+  },
+],
   },
   apis: ["./src/routes/*.js"],
 };
