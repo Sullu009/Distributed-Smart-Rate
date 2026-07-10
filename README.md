@@ -5,6 +5,13 @@ A production-ready distributed API Rate Limiter built using **Node.js, Express.j
 The project demonstrates how to implement scalable and distributed rate limiting using Redis Lua Scripts while supporting multiple server instances. It also includes JWT Authentication, Role-Based Rate Limiting, Analytics APIs and Swagger API Documentation.
 
 ---
+![Node.js](https://img.shields.io/badge/Node.js-22-green)
+![Express](https://img.shields.io/badge/Express-5-black)
+![MongoDB Atlas](https://img.shields.io/badge/MongoDB-Atlas-green)
+![Redis Cloud](https://img.shields.io/badge/Redis-Cloud-red)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+---
 
 # 📌 Features
 
@@ -199,8 +206,13 @@ MONGO_URI=your_mongodb_uri
 
 JWT_SECRET=your_secret
 
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
+PORT=3000
+
+MONGODB_URI=your_mongodb_uri
+
+REDIS_URL=your_redis_cloud_url
+
+JWT_SECRET=your_secret
 ```
 
 ---
