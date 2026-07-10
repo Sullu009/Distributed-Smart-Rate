@@ -3,7 +3,8 @@
 require('dotenv').config();
 
 const express = require('express');
-
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./swagger");
 const connectDB = require("./src/config/database");
 const authRoutes = require("./src/routes/authRoutes");
 
@@ -49,6 +50,7 @@ app.use(express.json());
 // Authentication Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/analytics", analyticsRoutes);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Identify clients by IP
 const byIp = (req) => req.ip;
